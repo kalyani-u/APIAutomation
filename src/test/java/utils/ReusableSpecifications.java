@@ -21,7 +21,7 @@ public class ReusableSpecifications {
 	
 	public static RequestSpecification genericRequestSpec() throws FileNotFoundException
 	{
-		PrintStream log = new PrintStream(new FileOutputStream("logging.txt"));
+		PrintStream log = new PrintStream(new FileOutputStream("logging.txt", true));
 		rspec = new RequestSpecBuilder();
 		rspec.setBaseUri("https://api.github.com").setAccept("String")
 		.addFilter(RequestLoggingFilter.logRequestTo(log))
@@ -34,7 +34,8 @@ public class ReusableSpecifications {
 	public static ResponseSpecification genericResponseSpec()
 	{
 		respec = new ResponseSpecBuilder();
-		respec.expectResponseTime(lessThan(5L), TimeUnit.SECONDS);
+		respec.expectResponseTime(lessThan(5L), TimeUnit.SECONDS)
+		.expectContentType("application/json");
 		responseSpec = respec.build();
 		return responseSpec;
 		
