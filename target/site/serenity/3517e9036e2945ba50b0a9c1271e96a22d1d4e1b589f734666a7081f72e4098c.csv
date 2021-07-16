@@ -1,5 +1,0 @@
-"Story","Title","Result","Date","Stability","Duration (s)"
-"Verify Github APIs","Verify GitHub Public Gists API with valid parameters","SUCCESS","2021-07-16T15:39:01.725+05:30[Asia/Calcutta]","0.0","5.13"
-"Verify Github APIs","Verify GitHub Public Gists API with invalid parameters","SUCCESS","2021-07-16T15:39:06.879+05:30[Asia/Calcutta]","0.0","1.6"
-"Verify Github APIs","Verify GitHub Gists API Update with insufficient data","SUCCESS","2021-07-16T15:39:08.489+05:30[Asia/Calcutta]","0.0","0.68"
-"Verify Github APIs","Verify GitHub Gists API Delete with insufficient parameters","SUCCESS","2021-07-16T15:39:09.184+05:30[Asia/Calcutta]","0.0","0.61"

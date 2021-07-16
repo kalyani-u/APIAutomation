@@ -39,11 +39,10 @@ public class StepDefinition extends ReusableSpecifications {
     	str = response.asString();
     }
 
-	//Reusable step
 	
-	@Then("I should see the statuscode as {int}")
-    public void verifyStatusCode(Integer code) {
-    	Assert.assertEquals(response.getStatusCode(),(int)code);
+	@Then("^I should see the statuscode as '200'$")
+    public void verifySuccessStatusCode() {
+    	Assert.assertEquals(response.getStatusCode(),200);
     }
 	
 	@Given("^I access Github API endpoint with invalid date \"([^\"]*)\"$")
@@ -51,6 +50,12 @@ public class StepDefinition extends ReusableSpecifications {
         rspec = SerenityRest.given().spec(genericRequestSpec()).queryParam("since", date);
     }
 	
+	
+	@Then("^I should see the statuscode as '422'$")
+    public void verifyFailStatusCode() {
+    	Assert.assertEquals(response.getStatusCode(),422);
+    	   	
+    }
 	
 	@And("^I should see the expected error message$")
     public void verifyErrorMessage() {
@@ -82,6 +87,13 @@ public class StepDefinition extends ReusableSpecifications {
     	response = rspec.when().delete("gists/123")
     			.then().spec(genericResponseSpec()).extract().response();
     	str = response.asString();
+    }
+	
+
+	@Then("^I should see the statuscode as '404'$")
+    public void verifyFailureStatusCode() {
+    	Assert.assertEquals(response.getStatusCode(),404);
+    	   	
     }
 	
 	@And("^I should see the error message as 'Not Found'$")
