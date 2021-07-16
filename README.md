@@ -1,6 +1,7 @@
 # APIAutomation
 
-Requirements
+**Requirements**
+
 
 Java 1.8
 
@@ -10,14 +11,22 @@ Git
 
 
 
-To clone the project:
+**To clone the project:**
+
 
 git clone https://github.com/kalyani-u/APIAutomation.git
 
-To run the tests:
+
+
+**To run the tests:**
+
 
 mvn clean verify
 
-Location of Serenity reports:
+
+
+
+**Location of Serenity reports:**
+
 
 target\site\serenity\index.xml
