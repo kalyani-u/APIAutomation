@@ -27,7 +27,7 @@ public class StepDefinition extends ReusableSpecifications {
 	String expectedMessage;
 	
 	@Given("^I access Github API endpoint with valid date \"([^\"]*)\"$")
-    public void accessAPIwithValidDate(String date) throws FileNotFoundException {
+    public void accessAPIwithValidDate(String date) throws IOException {
         rspec = SerenityRest.given().spec(genericRequestSpec()).queryParam("since", date);
     }
 
@@ -46,7 +46,7 @@ public class StepDefinition extends ReusableSpecifications {
     }
 	
 	@Given("^I access Github API endpoint with invalid date \"([^\"]*)\"$")
-    public void accessAPIwithInvalidDate(String date) throws FileNotFoundException {
+    public void accessAPIwithInvalidDate(String date) throws IOException {
         rspec = SerenityRest.given().spec(genericRequestSpec()).queryParam("since", date);
     }
 	
